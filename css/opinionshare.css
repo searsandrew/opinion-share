@@ -1,0 +1,4 @@
+.sb-close {position: relative; z-index: 9999;}
+.sb-slidebar {padding: 25px !important;}
+.admin-bar div.sb-slidebar {margin-top: 32px;}
+.text-slidebar-title, .text-slidebar-desc, .sb-slidebar .gform_heading, .sb-slidebar .gform_heading .gform_title, .sb-slidebar .gform_heading .gform_description, .sb-slidebar .gform_body .gfield_label {color: #FFF;}
