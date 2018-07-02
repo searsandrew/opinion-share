@@ -9,7 +9,7 @@ Author URI:  http://www.mayfifteenth.com
 $dir = plugin_dir_path( __FILE__ );
 require_once($dir.'inc/shortcode.php');
 require_once($dir.'inc/admin-opinionshare.php');
-require_once($dir.'inc/page-templater.php');
+require_once($dir.'inc/templater.php');
 
 function cfp_opinion_scripts(){
 	wp_enqueue_script( 'opinionsharejs', '/wp-content/plugins/opinion-share/js/opinion-share.js', array('jquery'), '1.0.0', true );
