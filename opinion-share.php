@@ -14,20 +14,23 @@ require_once($dir.'inc/templater.php');
 add_action('wp_head', 'cfp_do_action_sidebars', 10, 1);
 add_action('setup_bars', 'cfp_setup_sidebars', 15, 1);
 
-function cfp_setup_sidebars($options){
-	print_r($options); ?>
+function cfp_setup_sidebars($options){ ?>
 	<div id="osRightBar" class="sidenav sidenavRight">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&times;</a>
-		<?php if($options['cfp_opinionshare_gformchk_0'] == 1 && isset($options['cfp_opinionshare_gform_0'])){
-			$gformid = $options['cfp_opinionshare_gform_0'];
-			gravity_form($gformid, true, true, false, '', true);
-		} ?>
+		<div class="wrapper">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeRightNav()">&times;</a>
+			<?php if($options['cfp_opinionshare_gformchk_0'] == 1 && isset($options['cfp_opinionshare_gform_0'])){
+				$gformid = $options['cfp_opinionshare_gform_0'];
+				gravity_form($gformid, true, true, false, '', true);
+			} ?>
+		</div>
 	</div>
 
 	<div id="osLeftBar" class="sidenav sidenavLeft">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&times;</a>
-		<h3 class="text-center text-slidebar-title" style="line-height: 34px;"><?= strtoupper($options['cfp_opinionshare_ltitle']); ?></h3>
-		<?php echo $options['opinionshare_ldesc'] != ''?'<p class="text-slidebar-desc">'.$options['opinionshare_ldesc'].'</p>':''; ?>
+		<div class="wrapper">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeLeftNav()">&times;</a>
+			<h3 class="text-center text-slidebar-title" style="line-height: 34px;"><?= strtoupper($options['cfp_opinionshare_ltitle']); ?></h3>
+			<?php echo $options['opinionshare_ldesc'] != ''?'<p class="text-slidebar-desc">'.$options['opinionshare_ldesc'].'</p>':''; ?>
+		</div>
 	</div>
 <?php
 };

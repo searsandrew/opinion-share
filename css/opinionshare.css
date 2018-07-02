@@ -3,6 +3,14 @@ body {
     transition: background-color .5s;
 }
 
+.sidenav .wrapper {
+    padding: 12px;
+}
+
+.sidenav h3 {
+    color: #FFF;
+}
+
 .sidenavLeft {
     height: 100%;
     width: 0;
@@ -34,15 +42,24 @@ body {
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #00a0df;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover {
+    color: #66c6eb;
+}
+
+.sidenav a.closebtn {
+    padding: 8px 8px 8px 32px;
+    font-size: 25px;
+    color: #818181;
+}
+
+.sidenav a.closebtn:hover {
     color: #f1f1f1;
 }
 
@@ -56,6 +73,29 @@ body {
 
 #page {
     transition: margin .5s;
+}
+
+.opinion-share-title {
+    text-align: center;
+}
+
+.ps-answers {
+    margin: 0px auto;
+    width: 50%;
+}
+
+.os-answer.os-answer-yes {
+    display: grid;
+    width: 50%;
+    padding: 15px;
+    float: left;
+}
+
+.os-answer.os-answer-no {
+    display: grid;
+    width: 50%;
+    padding: 15px;
+    float: right;
 }
 
 @media screen and (max-height: 450px) {
