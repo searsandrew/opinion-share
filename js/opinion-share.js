@@ -1,12 +1,12 @@
 function openLeftNav() {
-	document.getElementById("osLeftBar").style.width = "250px";
-	document.getElementById("page").style.marginLeft = "250px";
+	document.getElementById("osLeftBar").style.width = "350px";
+	document.getElementById("page").style.marginLeft = "350px";
 	// document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function openRightNav() {
-	document.getElementById("osRightBar").style.width = "250px";
-	document.getElementById("page").style.marginRight = "250px";
+	document.getElementById("osRightBar").style.width = "350px";
+	document.getElementById("page").style.marginRight = "350px";
 	// document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
