@@ -69,18 +69,26 @@ function cfp_opinionshare_settings_init(){
 		'cfp_opinionshare'
 	);
 	
-	add_settings_field(
-		'cfp_opinionshare_layout_id',
-		'Layout Type', 
-		'cfp_opinionshare_layout_field',
-		'cfp_opinionshare',
-		'cfp_opinionshare_general'
-	);
+	// add_settings_field(
+	// 	'cfp_opinionshare_layout_id',
+	// 	'Layout Type', 
+	// 	'cfp_opinionshare_layout_field',
+	// 	'cfp_opinionshare',
+	// 	'cfp_opinionshare_general'
+	// );
 	
 	add_settings_field(
 		'cfp_opinionshare_template_id',
-		'Content Template', 
+		'Question Asked', 
 		'cfp_opinionshare_template_field',
+		'cfp_opinionshare',
+		'cfp_opinionshare_general'
+	);
+
+	add_settings_field(
+		'cfp_opinionshare_css_id',
+		'Custom CSS', 
+		'cfp_opinionshare_css_field',
 		'cfp_opinionshare',
 		'cfp_opinionshare_general'
 	);
@@ -143,19 +151,27 @@ function cfp_opinionshare_right_desc(){
 }
 
 /* filed output */
-function cfp_opinionshare_layout_field() {
-	$options = get_option('cfp_opinionshare_options');
-	echo '<select name="cfp_opinionshare_options[cfp_opinionshare_layout_0]">
-		<option value="1" '.selected( $options['cfp_opinionshare_layout_0'], 1, false).'>Page Slide</option>
-		<option value="2" '.selected( $options['cfp_opinionshare_layout_0'], 2, false).'>Page Overlay</option>
-	</select>';
-}
+// function cfp_opinionshare_layout_field() {
+// 	$options = get_option('cfp_opinionshare_options');
+// 	echo '<select name="cfp_opinionshare_options[cfp_opinionshare_layout_0]">
+// 		<option value="1" '.selected( $options['cfp_opinionshare_layout_0'], 1, false).'>Page Slide</option>
+// 		<option value="2" '.selected( $options['cfp_opinionshare_layout_0'], 2, false).'>Page Overlay</option>
+// 	</select>';
+// }
 
 /* filed output */
 function cfp_opinionshare_template_field() {
 	$options = get_option('cfp_opinionshare_options');
 	echo '<input type="text" name="cfp_opinionshare_options[cfp_opinionshare_template]" value="'.$options['cfp_opinionshare_template'].'" class="regular-text" />
-	<p class="description" id="template-description">Leave this blank to use the standard page content template. Defaults to \'content-page\'.</p>';
+	<p class="description" id="template-description">Customize the question that is being asked on the page.</p>';
+}
+
+/* filed output */
+function cfp_opinionshare_css_field() {
+	$options = get_option('cfp_opinionshare_options');
+	$authorbox = (isset($options['cfp_opinionshare_css'])) ? $options['cfp_opinionshare_css'] : '';
+	$settings = array('textarea_name' => 'cfp_opinionshare_options[cfp_opinionshare_css]', 'editor_height' => '150px', 'media_buttons' => false, 'wpautop' => false);
+	wp_editor($authorbox,'css_editor', $settings);
 }
 
 /* filed output */
@@ -174,7 +190,7 @@ function cfp_opinionshare_ltitle_field() {
 function cfp_opinionshare_ldesc_field() {
 	$options = get_option('cfp_opinionshare_options');
 	$authorbox = (isset($options['opinionshare_ldesc'])) ? $options['opinionshare_ldesc'] : '';
-	$authorbox = esc_textarea($authorbox); //sanitise output
+	//$authorbox = esc_textarea($authorbox); //sanitise output
 	$settings = array('textarea_name' => 'cfp_opinionshare_options[opinionshare_ldesc]', 'editor_height' => '150px');
 	wp_editor($authorbox,'left_desc_editor', $settings);
 }
